@@ -1,0 +1,45 @@
+"__      _______ __  __ _____   _____ 
+"\ \    / /_   _|  \/  |  __ \ / ____|
+" \ \  / /  | | | \  / | |__) | |     
+"  \ \/ /   | | | |\/| |  _  /| |     
+" _ \  /   _| |_| |  | | | \ \| |____ 
+"(_) \/   |_____|_|  |_|_|  \_\\_____|
+"
+
+" This line should not be removed as it ensures that various options are
+" properly set to work with the Vim-related packages.
+runtime! archlinux.vim
+
+" Appearance
+syntax on
+set showcmd
+set number
+colorscheme neverland2
+
+" Indent
+set autoindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" Mapping differents things
+map <F2> :NERDTreeToggle<CR>
+map <F3> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+
+" syntax files
+au! Syntax processing source /home/dada/.vim/syntax/processing.vim
+au! Syntax actionscript source /home/dada/.vim/syntax/actionscript.vim
+au! Syntax nginx source /home/dada/.vim/syntax/nginx.vim
+au BufNewFile,BufRead,BufEnter *.pde set filetype=processing
+au BufNewFile,BufRead,BufEnter *.as,*.as3 set filetype=actionscript
+au BufNewFile,BufRead,BufEnter nginx.conf,*.nginx set filetype=nginx
+
+" Differents skeletons
+autocmd BufNewFile  Main.java	0r ~/.vim/skeletons/Main.java|5
+autocmd BufNewFile  main.cpp	0r ~/.vim/skeletons/main.cpp|5
+autocmd BufNewFile  *.sh	0r ~/.vim/skeletons/skeleton.sh|3
+autocmd BufNewFile  *.py	0r ~/.vim/skeletons/skeleton.py|3
+autocmd BufNewFile  *.cpp	0r ~/.vim/skeletons/skeleton.cpp|7
+autocmd BufNewFile  *.h		0r ~/.vim/skeletons/skeleton.h|7
+autocmd BufNewFile	Makefile	0r ~/.vim/skeletons/Makefile
