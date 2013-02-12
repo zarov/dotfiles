@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# coma stands for configuration manager
-# it creates all necessary links when deploying this dotfiles on a new system
-
