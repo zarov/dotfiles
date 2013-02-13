@@ -1,0 +1,6 @@
+zsh/            .zsh/           1
+zsh/zshrc       .zshrc          0
+vim/            .vim/           1
+vim/vimrc       .vimrc          0
+wmfs/           .config/wmfs/   1
+bin/            bin/            1

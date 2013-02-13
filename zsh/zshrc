@@ -4,6 +4,9 @@
 # Inspired by asyd, legreffier, linkkd
 # 
 
+# PATH
+PATH=$PATH:$HOME/bin
+
 # Functions
 fpath=($HOME/.zsh/functions $fpath)
 

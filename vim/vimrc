@@ -36,10 +36,10 @@ au BufNewFile,BufRead,BufEnter *.as,*.as3 set filetype=actionscript
 au BufNewFile,BufRead,BufEnter nginx.conf,*.nginx set filetype=nginx
 
 " Differents skeletons
-autocmd BufNewFile  Main.java	0r ~/.vim/skeletons/Main.java|5
-autocmd BufNewFile  main.cpp	0r ~/.vim/skeletons/main.cpp|5
-autocmd BufNewFile  *.sh	0r ~/.vim/skeletons/skeleton.sh|3
-autocmd BufNewFile  *.py	0r ~/.vim/skeletons/skeleton.py|3
-autocmd BufNewFile  *.cpp	0r ~/.vim/skeletons/skeleton.cpp|7
-autocmd BufNewFile  *.h		0r ~/.vim/skeletons/skeleton.h|7
-autocmd BufNewFile	Makefile	0r ~/.vim/skeletons/Makefile
+autocmd BufNewFile  Main.java 0r ~/.vim/skeletons/Main.java|5
+autocmd BufNewFile  main.cpp  0r ~/.vim/skeletons/main.cpp|5
+autocmd BufNewFile  *.sh  0r ~/.vim/skeletons/skeleton.sh|3
+autocmd BufNewFile  *.py  0r ~/.vim/skeletons/skeleton.py|3
+autocmd BufNewFile  *.cpp 0r ~/.vim/skeletons/skeleton.cpp|7
+autocmd BufNewFile  *.h       0r ~/.vim/skeletons/skeleton.h|7
+autocmd BufNewFile    Makefile    0r ~/.vim/skeletons/Makefile

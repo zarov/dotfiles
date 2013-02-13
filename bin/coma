@@ -1,0 +1,75 @@
+#!/bin/sh
+
+CONF=$HOME/.comarc
+COMA=$HOME/projects/dotfiles
+
+# help 
+_help() {
+    echo "usage: coma <command>"
+    echo "   fetch          fetch files in coma directory"
+    echo "   push           push files from coma directory"
+    echo "   commit <msg>   send coma directory on github repo"
+    echo "   pull           pull from github repo"
+    echo "   help           display this help"
+}
+
+# read config and apply command
+_fpufh() {
+    while read line
+    do
+        dest=$COMA/`echo $line | awk '{ print $1 }'`
+        orig=$HOME/`echo $line | awk '{ print $2 }'`
+        d=`echo $line | awk '{ print $3 }'`
+        
+        # check if directory
+        if [ $d -eq 1 ]
+        then
+            opts="-rv"
+        else
+            opts="-v"
+        fi
+
+        # copy files
+        if [ $1 -eq 1 ]
+        then
+            cp $opts $dest $orig
+        else
+            echo $orig
+            echo $dest
+            cp $opts $orig $dest
+        fi
+    done < $CONF
+}
+
+# nb of args
+if [ $# -lt 1 ]
+then
+    _help
+    exit
+fi
+
+# main
+case $1 in
+    fetch)
+        _fpufh 0
+    ;;
+
+    push)
+        _fpufh 1
+    ;;
+
+    commit)
+        cd $COMA
+        git add .
+        git commit -m "update"
+        git push
+    ;;
+
+    pull)
+        cd $COMA
+        git pull
+    ;;
+
+    *) _help ;;
+esac
+
