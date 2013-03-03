@@ -151,7 +151,7 @@
      	name = "exec"
      	prompt = "Run:"
      	command = "spawn"
-     	width = 200
+     	width = 300
   	[/launcher]
 [/launchers]
 
@@ -161,33 +161,33 @@
   	[key] mod = {"Control", "Alt"} key = "q" func = "quit" [/key]
   	[key] mod = {"Control", "Alt"} key = "r" func = "reload" [/key]
         
-	# Applications
-    [key] mod = {"Control", "Super"} key = "t" func = "spawn" cmd = "urxvtc" 							[/key]
-    [key] mod = {"Control", "Super"} key = "c" func = "spawn" cmd = "chromium" 						    [/key]
-    [key] mod = {"Control", "Super"} key = "l" func = "spawn" cmd = "libreoffice" 			        	[/key]
-    [key] mod = {"Control", "Super"} key = "v" func = "spawn" cmd = "vlc" 							    [/key]
-    [key] mod = {"Control", "Super"} key = "u" func = "spawn" cmd = "thunar" 					        [/key]
-    [key] mod = {"Control", "Super"} key = "w" func = "spawn" cmd = "filezilla" 			        	[/key]
-    [key] mod = {"Control", "Super"} key = "a" func = "spawn" cmd = "acroread"						    [/key]
-    [key] mod = {"Control", "Super"} key = "g" func = "spawn" cmd = "gimp" 								[/key]
-    [key] mod = {"Control", "Super"} key = "n" func = "spawn" cmd = "urxvtc -name ncmpcpp -e ncmpcpp" 	[/key]
-    [key] mod = {"Control", "Super"} key = "i" func = "spawn" cmd = "urxvtc -name irssi -e irssi"	 	[/key]
-    [key] mod = {"Control", "Super"} key = "d" func = "spawn" cmd = "transmission-gtk" 					[/key]
-    [key] mod = {"Control", "Super"} key = "j" func = "spawn" cmd = "netbeans" 							[/key]
-    [key] mod = {"Control", "Super"} key = "s" func = "spawn" cmd = "steam" 							[/key]
+		# Applications
+    [key] mod = {"Control", "Super"} key = "t" func = "spawn" cmd = "urxvtc"													[/key]
+    [key] mod = {"Control", "Super"} key = "c" func = "spawn" cmd = "chromium"											  [/key]
+    [key] mod = {"Control", "Super"} key = "l" func = "spawn" cmd = "libreoffice"											[/key]
+    [key] mod = {"Control", "Super"} key = "v" func = "spawn" cmd = "vlc"														  [/key]
+    [key] mod = {"Control", "Super"} key = "u" func = "spawn" cmd = "thunar"									        [/key]
+    [key] mod = {"Control", "Super"} key = "w" func = "spawn" cmd = "filezilla"												[/key]
+    [key] mod = {"Control", "Super"} key = "a" func = "spawn" cmd = "acroread"												[/key]
+    [key] mod = {"Control", "Super"} key = "g" func = "spawn" cmd = "gimp"														[/key]
+    [key] mod = {"Control", "Super"} key = "n" func = "spawn" cmd = "urxvtc -name ncmpcpp -e ncmpcpp" [/key]
+    [key] mod = {"Control", "Super"} key = "i" func = "spawn" cmd = "urxvtc -name irssi -e irssi"			[/key]
+    [key] mod = {"Control", "Super"} key = "j" func = "spawn" cmd = "netbeans"												[/key]
+    [key] mod = {"Control", "Super"} key = "s" func = "spawn" cmd = "steam"														[/key]
+		[key] mod = {"Control", "Super"} key = "d" func = "spawn" cmd = "dwb"															[/key]
 	
-	# Volume
-	[key] mod = {""} key = "XF86AudioLowerVolume" 	func = "spawn" cmd = "amixer -q -c 0 sset 'Master' 4dB-" 	[/key]
-	[key] mod = {""} key = "XF86AudioRaiseVolume"	func = "spawn" cmd = "amixer -q -c 0 sset 'Master' 4dB+"	[/key]
-	[key] mod = {""} key = "XF86AudioMute"			func = "spawn" cmd = "amixer -q -c 0 sset 'Master' toggle"  [/key]
-  	[key] mod = {""} key = "XF86Eject" 				func = "spawn" cmd = "eject -T"								[/key]
+		# Volume
+		[key] mod = {""} key = "XF86AudioLowerVolume" 	func = "spawn" cmd = "amixer -q -c 0 sset 'Master' 4dB-"		[/key]
+		[key] mod = {""} key = "XF86AudioRaiseVolume"		func = "spawn" cmd = "amixer -q -c 0 sset 'Master' 4dB+"		[/key]
+		[key] mod = {""} key = "XF86AudioMute"					func = "spawn" cmd = "amixer -q -c 0 sset 'Master' toggle"  [/key]
+  	[key] mod = {""} key = "XF86Eject"							func = "spawn" cmd = "eject -T"														  [/key]
 
-	# Sync Google Drive
-	[key] mod = {""} key = "XF86Tools" func = "exec" cmd = "sync_drive" [/key]
-		
-	# Screen Manipulation
-	[key] mod = {"Control", "Super"} key = "Left" func = "screen_next" 	[/key]
-	[key] mod = {"Control", "Super"} key = "Right" func = "screen_prev" [/key]
+		# Sync Google Drive
+		[key] mod = {""} key = "XF86Tools" func = "exec" cmd = "sync_drive" [/key]
+			
+		# Screen Manipulation
+		[key] mod = {"Control", "Super"} key = "Left" func = "screen_next" 	[/key]
+		[key] mod = {"Control", "Super"} key = "Right" func = "screen_prev" [/key]
 
   	# Tag manipulation
   	[key] mod = {"Super"} key = "F1" func = "tag_set" cmd = "0" [/key]
