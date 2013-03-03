@@ -1,0 +1,6 @@
+Control @Page_Up@:focus_prev
+Control @Page_Down@:focus_next
+Control w:close_tab
+Mod1 @Left@:history_back
+Mod1 @Right@:history_next
+Control t:tab_new
