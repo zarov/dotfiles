@@ -1,68 +1,28 @@
-#
-# Adrien Berthet <berthet.a@gmail.com>
-# .zshrc written since june 2011
-# Inspired by asyd, legreffier, linkkd
-# 
+#!/usr/bin/env zsh
 
 # PATH
-PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin
 
-# Functions
-fpath=($HOME/.zsh/functions $fpath)
+# Colors
+eval `dircolors $HOME/.zsh/colors`
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# Completion
-autoload -U zutil
-autoload -U compinit
-autoload -U complist
-compinit
-
-zstyle ':completion:*' completer _expand _complete _approximate
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' menu select=1
-zstyle ':completion:*' original true
-zstyle ':completion:*:approximate:*' max-errors par 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
-
-# Set default umask to 557
-local os
-umask 022
-
-# Global resource files
-for file in $HOME/.zsh/rc/*.rc; do
+# Differents files to source
+for file in $HOME/.zsh/*.zsh; do
 	source $file
 done
 
-# Colors
-autoload -U colors
-colors
+# History
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+HISTFILE=~/.zsh/history
+HISTSIZE=1000000
+SAVEHIST=1000000
+export HISTFILE HISTSIZE SAVEHIST
+setopt histverify
 
-# Allows functions in the prompt
-setopt PROMPT_SUBST
+local os host
 
-# Autoload zsh functions.
-fpath=(~/.zsh/functions $fpath)
-autoload -U ~/.zsh/functions/*(:t)
-
-# Enable auto-execution of functions.
-typeset -ga preexec_functions
-typeset -ga precmd_functions
-typeset -ga chpwd_functions
- 
-# Append git functions needed for prompt.
-preexec_functions+='preexec_update_git_vars'
-precmd_functions+='precmd_update_git_vars'
-chpwd_functions+='chpwd_update_git_vars'
-
-for color in red green yellow blue white magenta cyan; do
-	eval PR_$color='%{$terminfo[bold]$fg[$color]%}'
-	eval PR_LIGHT_$color='%{$fg[$color]%}'
-done
-
-PR_NO_COLOR='%{$terminfo[sgr0]%}'
-
-# Prompt
-autoload -U promptinit
-promptinit
-export PS1="[$PR_LIGHT_magenta%~$PR_NO_COLOR]%# "
-export RPS1="$PR_cyan%B%T%b"
-export LC_ALL=fr_FR.UTF-8
-export LANG=fr_FR.UTF-8
+# Set default umask to 557
+umask 022

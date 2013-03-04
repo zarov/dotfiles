@@ -7,6 +7,7 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
 alias df="df -h"
+alias grep="grep --color"
 alias ls="ls --color=auto -h"
 alias ll="ls -l"
 alias la="ls -a"
@@ -14,6 +15,7 @@ alias lla="ls -la"
 alias paste="pastebin -d -n monsieurdoc"
 alias ping="ping -c 3"
 alias scrot="scrot -c -d 5"
+alias tree="tree -C"
 
 function extract () {
     if [ -f $1 ] ; then
