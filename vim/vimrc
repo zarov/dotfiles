@@ -34,6 +34,9 @@ autocmd Filetype html,xhtml,xml source ~/.vim/bundle/closetag/plugin/closetag.vi
 " Tagbar
 let g:tagbar_usearrows = 1
 
+" Gitgutter
+let g:gitgutter_enabled = 1
+
 " Syntax files
 au! Syntax processing source /home/dada/.vim/syntax/processing.vim
 au! Syntax actionscript source /home/dada/.vim/syntax/actionscript.vim
