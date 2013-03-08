@@ -14,6 +14,7 @@ call pathogen#helptags()
 syntax on
 set showcmd
 set number
+set cursorline
 colorscheme 256xoria
 
 " Indent
@@ -21,6 +22,14 @@ set autoindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
+" Wrap
+set textwidth=128
+set colorcolumn=129
+
+" Swap
+" In separate directory
+set directory=$HOME/.vim_tmp/
 
 " Mapping
 map <F2> :NERDTreeToggle<CR>
