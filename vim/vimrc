@@ -15,7 +15,7 @@ syntax on
 set showcmd
 set number
 set cursorline
-"colorscheme 256xoria
+colorscheme 256xoria
 
 " Indent
 set autoindent
@@ -25,7 +25,7 @@ set softtabstop=4
 
 " Wrap
 set textwidth=80
-set colorcolumn=80
+"set colorcolumn=80
 
 " Swap
 " In separate directory
@@ -51,10 +51,12 @@ au! Syntax processing source /home/dada/.vim/syntax/processing.vim
 au! Syntax actionscript source /home/dada/.vim/syntax/actionscript.vim
 au! Syntax nginx source /home/dada/.vim/syntax/nginx.vim
 au! Syntax prolog source /home/dada/.vim/syntax/prolog.vim
+au! Syntax markdown source /home/dada/.vim/syntax/markdown.vim
 au BufNewFile,BufRead,BufEnter *.pde set filetype=processing
 au BufNewFile,BufRead,BufEnter *.as,*.as3 set filetype=actionscript
 au BufNewFile,BufRead,BufEnter nginx.conf,*.nginx set filetype=nginx
 au BufNewFile,BufRead,BufEnter *.pro set filetype=prolog
+au BufNewFile,BufRead,BufEnter *.md, *.mkd, *.markdown set filetype=markdown
 
 " Skeletons
 autocmd BufNewFile  Main.java 0r ~/.vim/skeletons/Main.java|5
