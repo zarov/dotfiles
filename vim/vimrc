@@ -47,11 +47,11 @@ let g:tagbar_usearrows = 1
 let g:gitgutter_enabled = 1
 
 " Syntax files
-au! Syntax processing source /home/dada/.vim/syntax/processing.vim
-au! Syntax actionscript source /home/dada/.vim/syntax/actionscript.vim
-au! Syntax nginx source /home/dada/.vim/syntax/nginx.vim
-au! Syntax prolog source /home/dada/.vim/syntax/prolog.vim
-au! Syntax markdown source /home/dada/.vim/syntax/markdown.vim
+au! Syntax processing source ~/.vim/syntax/processing.vim
+au! Syntax actionscript source ~/.vim/syntax/actionscript.vim
+au! Syntax nginx source ~/.vim/syntax/nginx.vim
+au! Syntax prolog source ~/.vim/syntax/prolog.vim
+au! Syntax markdown source ~/.vim/syntax/markdown.vim
 au BufNewFile,BufRead,BufEnter *.pde set filetype=processing
 au BufNewFile,BufRead,BufEnter *.as,*.as3 set filetype=actionscript
 au BufNewFile,BufRead,BufEnter nginx.conf,*.nginx set filetype=nginx
