@@ -9,10 +9,10 @@
 #
 
 # PATH
-export PATH=$PATH:$HOME/bin
+export PATH=/usr/local/bin:$PATH:$HOME/bin
 
 # Colors
-eval `dircolors $HOME/.zsh/colors`
+eval `gdircolors $HOME/.zsh/colors`
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Differents files to source
