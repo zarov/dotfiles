@@ -27,8 +27,7 @@ set softtabstop=4
 set textwidth=80
 "set colorcolumn=80
 
-" Swap
-" In separate directory
+" Swap in separate directory
 set directory=$HOME/.vim_tmp/
 
 " Mapping
@@ -47,11 +46,11 @@ let g:tagbar_usearrows = 1
 let g:gitgutter_enabled = 1
 
 " Syntax files
-au! Syntax processing source ~/.vim/syntax/processing.vim
+au! Syntax processing	source ~/.vim/syntax/processing.vim
 au! Syntax actionscript source ~/.vim/syntax/actionscript.vim
-au! Syntax nginx source ~/.vim/syntax/nginx.vim
-au! Syntax prolog source ~/.vim/syntax/prolog.vim
-au! Syntax markdown source ~/.vim/syntax/markdown.vim
+au! Syntax nginx		source ~/.vim/syntax/nginx.vim
+au! Syntax prolog		source ~/.vim/syntax/prolog.vim
+au! Syntax markdown		source ~/.vim/syntax/markdown.vim
 au BufNewFile,BufRead,BufEnter *.pde set filetype=processing
 au BufNewFile,BufRead,BufEnter *.as,*.as3 set filetype=actionscript
 au BufNewFile,BufRead,BufEnter nginx.conf,*.nginx set filetype=nginx
@@ -59,14 +58,9 @@ au BufNewFile,BufRead,BufEnter *.pro set filetype=prolog
 au BufNewFile,BufRead,BufEnter *.md, *.mkd, *.markdown set filetype=markdown
 
 " Skeletons
-autocmd BufNewFile  Main.java 0r ~/.vim/skeletons/Main.java|5
-autocmd BufNewFile  main.cpp  0r ~/.vim/skeletons/main.cpp|5
-autocmd BufNewFile  *.sh  0r ~/.vim/skeletons/skeleton.sh|3
-autocmd BufNewFile  *.py  0r ~/.vim/skeletons/skeleton.py|3
-autocmd BufNewFile  *.cpp 0r ~/.vim/skeletons/skeleton.cpp|7
-autocmd BufNewFile  *.h       0r ~/.vim/skeletons/skeleton.h|7
-autocmd BufNewFile    Makefile    0r ~/.vim/skeletons/Makefile
+autocmd BufNewFile  *.sh		0r ~/.vim/skeletons/skeleton.sh|3
+autocmd BufNewFile  *.py		0r ~/.vim/skeletons/skeleton.py|3
+autocmd BufNewFile  Makefile    0r ~/.vim/skeletons/Makefile
 
 " OmniCpp
-
 let g:SuperTabDefaultCompletionType = "context" "SuperTab & OmniCpp

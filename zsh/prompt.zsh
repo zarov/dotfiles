@@ -3,6 +3,8 @@
 autoload -U promptinit && promptinit
 autoload -U colors && colors
 
+setopt PROMPT_SUBST
+
 # thank you @holman & @ehrenmurdick
 if (( $+commands[git] ))
 then
@@ -21,12 +23,7 @@ git_dirty() {
   then
     echo ""
   else
-    if [[ "$st" =~ ^nothing ]]
-    then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
-    else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
-    fi
+    echo "on %{$fg_no_bold[yellow]%}$(git_prompt_info)%{$reset_color%}$(need_push)"
   fi
 }
 
@@ -37,50 +34,29 @@ git_prompt_info () {
 }
 
 unpushed () {
-  $git cherry -v @{upstream} 2>/dev/null
+  $git cherry -v @{upstream} 2>/dev/null | wc -l | awk {'print $1'}
 }
 
 need_push () {
-  if [[ $(unpushed) == "" ]]
+  if [[ $(unpushed) == "0" ]]
   then
-    echo " "
+    echo " [%{$fg_bold[green]%}✔︎%{$reset_color%}]"
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
-  fi
-}
-
-ruby_version() {
-  if (( $+commands[rbenv] ))
-  then
-    echo "$(rbenv version | awk '{print $1}')"
-  fi
-
-  if (( $+commands[rvm-prompt] ))
-  then
-    echo "$(rvm-prompt | awk '{print $1}')"
-  fi
-}
-
-rb_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
-  then
-    echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%} "
-  else
-    echo ""
+    echo " [%{$fg_bold[red]%}↑ $(unpushed)%{$reset_color%}] "
   fi
 }
 
 directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  echo "%{$fg_bold[cyan]%}%~%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(directory_name) $(git_dirty)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
 
 precmd() {
-  title "zsh" "%m" "%55<...<%~"
+  print -Pn "\e]0;%~\a"
   set_prompt
 }
 
