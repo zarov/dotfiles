@@ -25,7 +25,7 @@ set softtabstop=4
 
 " Wrap
 set textwidth=80
-"set colorcolumn=80
+set colorcolumn=81
 
 " Swap in separate directory
 set directory=$HOME/.vim_tmp/
@@ -50,12 +50,12 @@ au! Syntax processing	source ~/.vim/syntax/processing.vim
 au! Syntax actionscript source ~/.vim/syntax/actionscript.vim
 au! Syntax nginx		source ~/.vim/syntax/nginx.vim
 au! Syntax prolog		source ~/.vim/syntax/prolog.vim
-au! Syntax markdown		source ~/.vim/syntax/markdown.vim
+"au! Syntax markdown		source ~/.vim/syntax/markdown.vim
 au BufNewFile,BufRead,BufEnter *.pde set filetype=processing
 au BufNewFile,BufRead,BufEnter *.as,*.as3 set filetype=actionscript
 au BufNewFile,BufRead,BufEnter nginx.conf,*.nginx set filetype=nginx
 au BufNewFile,BufRead,BufEnter *.pro set filetype=prolog
-au BufNewFile,BufRead,BufEnter *.md, *.mkd, *.markdown set filetype=markdown
+"au BufNewFile,BufRead,BufEnter *.md, *.mkd, *.markdown set filetype=markdown
 
 " Skeletons
 autocmd BufNewFile  *.sh		0r ~/.vim/skeletons/skeleton.sh|3

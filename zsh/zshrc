@@ -9,7 +9,7 @@
 #
 
 # PATH
-export PATH=/usr/local/bin:$PATH:$HOME/bin
+export PATH=/usr/sbin:/usr/local/bin:/usr/local/Cellar:$HOME/bin:$HOME//Library/Haskell/ghc-7.6.3/lib/cabal-install-1.18.0.3/bin:/sbin:/opt/local/bin:/opt/local/sbin:$PATH
 
 # Colors
 eval `gdircolors $HOME/.zsh/colors`
@@ -30,7 +30,14 @@ SAVEHIST=1000000
 export HISTFILE HISTSIZE SAVEHIST
 setopt histverify
 
+export PANDOREHOME=/usr/sbin/pandore
+export PATH=/usr/sbin/pandore:/usr/sbin/pandore/bin:$PATH
+export LD_LIBRARY_PATH=/usr/sbin/pandore/lib:$LD_LIBRARY_PATH
+
 local os host
 
 # Set default umask to 557
 umask 022
+
+export NVM_DIR="/Users/zarov/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
