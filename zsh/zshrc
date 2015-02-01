@@ -9,7 +9,10 @@
 #
 
 # PATH
-export PATH=/usr/sbin:/usr/local/bin:/usr/local/Cellar:$HOME/bin:$HOME//Library/Haskell/ghc-7.6.3/lib/cabal-install-1.18.0.3/bin:/sbin:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/usr/sbin:/usr/local/bin:/usr/local/Cellar:$HOME/bin:$PATH
+export PATH=$HOME/Library/Haskell/ghc-7.6.3/lib/cabal-install-1.18.0.3/bin:$PATH
+export PATH=/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/texlive/2013/bin/x86_64-darwin:$PATH
+export PATH=/Applications/CMake.app/Contents/bin:$PATH
 
 # Colors
 eval `gdircolors $HOME/.zsh/colors`
@@ -41,3 +44,6 @@ umask 022
 
 export NVM_DIR="/Users/zarov/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Matlab
+export MATLAB_JAVA=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/jre

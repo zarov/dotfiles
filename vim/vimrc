@@ -59,7 +59,6 @@ au BufNewFile,BufRead,BufEnter *.pro set filetype=prolog
 
 " Skeletons
 autocmd BufNewFile  *.sh		0r ~/.vim/skeletons/skeleton.sh|3
-autocmd BufNewFile  *.py		0r ~/.vim/skeletons/skeleton.py|3
 autocmd BufNewFile  Makefile    0r ~/.vim/skeletons/Makefile
 
 " OmniCpp
