@@ -15,9 +15,10 @@ export PATH=/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/texlive/2013/bin/x86
 export PATH=/Applications/CMake.app/Contents/bin:$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH=/System/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+export PATH=/Users/aberthet/bin:$PATH
 
 # Colors
-eval `gdircolors $HOME/.zsh/colors`
+#eval `gdircolors $HOME/.zsh/colors`
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Differents files to source

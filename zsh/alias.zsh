@@ -40,3 +40,5 @@ function extract () {
 }
 
 function mcd() { mkdir -p $1 && cd $1 }
+
+function git-spull () { git pull "$@" && git submodule sync --recursive && git submodule update --init --recursive }
