@@ -1,0 +1,39 @@
+" plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/NERDTree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-startify'
+Plug 'mhartington/oceanic-next'
+
+call plug#end()
+
+" gutter
+set number
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '◆'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '~'
+
+" ui
+set cursorline
+set showcmd
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" theme
+syntax enable
+colorscheme OceanicNext
+
+" indent
+set autoindent
+
+" airline
+let g:airline_theme='oceanicnext'
+let g:airline_powerline_fonts = 1

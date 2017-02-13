@@ -17,6 +17,7 @@ alias paste="pastebin -d -n zarov"
 alias ping="ping -c 3"
 alias scrot="scrot -c -d 5"
 alias tree="tree -C"
+alias vim="nvim"
 
 function extract () {
     if [ -f $1 ] ; then
