@@ -1,0 +1,13 @@
+[core]
+	excludesfile = $HOME/.gitignore_global
+	editor = /usr/local/bin/vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[push]
+	default = current
+[alias]
+	l = log --pretty=oneline -n10
+	st = status -sb
+	lg = log --color --graph --abbrev-commit\n  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'
+	stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git stash store -m \"$2\" $rev; }; _"
+[url "ssh://git@github.com"]
+	insteadOf = https://github.com

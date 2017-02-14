@@ -1,5 +1,5 @@
 " plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/NERDTree'
 Plug 'vim-airline/vim-airline'
@@ -10,6 +10,10 @@ Plug 'mhinz/vim-startify'
 Plug 'mhartington/oceanic-next'
 
 call plug#end()
+
+" nerdtree
+" autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 " gutter
 set number
