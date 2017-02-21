@@ -8,6 +8,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-sleuth'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -39,11 +40,14 @@ colorscheme OceanicNext
 " indent
 set autoindent
 
+" trailing
+autocmd BufWritePre * %s/\s\+$//e
+
 " airline
 let g:airline_theme='oceanicnext'
 let g:airline_powerline_fonts = 1
 
-" no arrow 
+" no arrow
 " http://jeetworks.org/vim-making-those-arrow-keys-work-for-you-or-why-the-anti-arrow-key-propoganda-is-wrong/
 noremap		<Up>	<NOP>
 noremap		<Down>	<NOP>
@@ -57,3 +61,5 @@ inoremap	<Right>	<NOP>
 " big jump with J and K
 nnoremap	J	15j
 nnoremap	K	15k
+vnoremap	J	15j
+vnoremap	K	15k
