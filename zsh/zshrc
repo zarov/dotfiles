@@ -1,29 +1,23 @@
 #!/usr/bin/env zsh
 
-#  _____________ __  __ _____   _____ 
+#  _____________ __  __ _____   _____
 #  |___   |   __| |  | |  __ \ / ____|
-#     /  /|  |__| |__| | |__) | |     
-#    /  / |__   |  __  |  _  /| |     
-# _ /  /__ __|  | |  | | | \ \| |____ 
+#     /  /|  |__| |__| | |__) | |
+#    /  / |__   |  __  |  _  /| |
+# _ /  /__ __|  | |  | | | \ \| |____
 #(_)______|_____|_|  |_|_|  \_\\_____|
 #
 
 # PATH
-export PATH=/usr/sbin:/usr/local/bin:/usr/local/Cellar:$HOME/bin:$PATH
-export PATH=$HOME/Library/Haskell/ghc-7.6.3/lib/cabal-install-1.18.0.3/bin:$PATH
-export PATH=/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/texlive/2013/bin/x86_64-darwin:$PATH
-export PATH=/Applications/CMake.app/Contents/bin:$HOME/Library/Android/sdk/platform-tools:$PATH
-export PATH=/System/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export PATH=/Users/aberthet/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/Cellar:$PATH #homebrew
+export PATH=$HOME/bin:$PATH #local scripts
 
 # Colors
-#eval `gdircolors $HOME/.zsh/colors`
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Differents files to source
 for file in $HOME/.zsh/*.zsh; do
-	source $file
+    source $file
 done
 
 # Best word removing
@@ -40,21 +34,7 @@ SAVEHIST=1000000
 export HISTFILE HISTSIZE SAVEHIST
 setopt histverify
 
-export PANDOREHOME=/usr/sbin/pandore
-export PATH=/usr/sbin/pandore:/usr/sbin/pandore/bin:$PATH
-export LD_LIBRARY_PATH=/usr/sbin/pandore/lib:$LD_LIBRARY_PATH
-
 local os host
 
 # Set default umask to 557
 umask 022
-
-export NVM_DIR="/Users/zarov/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Matlab
-export MATLAB_JAVA=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/jre
-
-# Android
-export ANDROID_HOME=~/Library/Android/sdk
-export ANDROID_NDK=~/Library/Android/ndk
