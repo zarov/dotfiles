@@ -9,12 +9,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
 " nerdtree
 " autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.rej$']
 
 " gutter
 set number
@@ -63,3 +65,6 @@ nnoremap	J	15j
 nnoremap	K	15k
 vnoremap	J	15j
 vnoremap	K	15k
+
+" js
+let g:javascript_plugin_jsdoc = 1
