@@ -82,8 +82,12 @@ vnoremap	K	15k
 let g:javascript_plugin_jsdoc = 1
 
 " buffers
-nnoremap 	<c-h>	:bp<CR>
-nnoremap	<c-l>	:bn<CR>
+nnoremap 	<C-h>	:bp<CR>
+nnoremap	<C-l>	:bn<CR>
+
+" buffer history
+set undofile
+set undodir=~/.local/share/nvim/undo/
 
 " delete the current buffer without losing the window
 cabbrev d bp\|bd #
