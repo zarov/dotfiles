@@ -11,6 +11,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tikhomirov/vim-glsl'
 
 call plug#end()
 
@@ -36,17 +37,18 @@ if (has("termguicolors"))
 	set termguicolors
 endif
 
-" cursor in iterm2 osx
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" no cursor styling
+set guicursor=
 
 " theme
 syntax enable
 colorscheme OceanicNext
 
+" custom syntax
+autocmd! BufNewFile,BufRead *.glsl set filetype=glsl
+
 " columns
-set cc=100
+set cc=80
 set nowrap
 hi ColorColumn ctermbg=238 guibg=#223344
 
@@ -86,16 +88,6 @@ let g:javascript_plugin_jsdoc = 1
 " buffers
 nnoremap 	<C-h>	:bp<CR>
 nnoremap	<C-l>	:bn<CR>
-nnoremap	<Leader>1 :1b<CR>
-nnoremap	<Leader>2 :2b<CR>
-nnoremap	<Leader>3 :3b<CR>
-nnoremap	<Leader>4 :4b<CR>
-nnoremap	<Leader>5 :5b<CR>
-nnoremap	<Leader>6 :6b<CR>
-nnoremap	<Leader>7 :7b<CR>
-nnoremap	<Leader>8 :8b<CR>
-nnoremap	<Leader>9 :9b<CR>
-nnoremap	<Leader>0 :10b<CR>
 
 " buffer history
 set undofile
