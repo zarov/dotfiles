@@ -12,6 +12,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tikhomirov/vim-glsl'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mbbill/undotree'
 
 call plug#end()
 

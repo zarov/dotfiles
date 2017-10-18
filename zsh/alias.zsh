@@ -18,6 +18,7 @@ alias ping="ping -c 3"
 alias scrot="scrot -c -d 5"
 alias tree="tree -C"
 alias vim="nvim"
+alias python="python3"
 
 function extract () {
     if [ -f $1 ] ; then

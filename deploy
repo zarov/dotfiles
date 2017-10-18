@@ -22,6 +22,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo " Linking neovim"
-ln -s $CWD/vim ~/.config/nvim
 ln -s $CWD/vimrc ~/.config/nvim/init.vim
+ln -s $CWD/filetype ~/.config/nvim/ftdetect
 mkdir ~/.local/share/nvim/undo

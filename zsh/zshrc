@@ -9,7 +9,7 @@
 #
 
 # PATH
-export PATH=/usr/local/bin:/usr/local/Cellar:$PATH #homebrew
+export PATH=/usr/local/Cellar:$PATH #homebrew
 export PATH=$HOME/bin:$PATH #local scripts
 
 # Colors
