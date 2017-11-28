@@ -8,7 +8,7 @@ alias ......="cd ../../../../.."
 
 alias df="df -h"
 alias grep="grep --color"
-alias ls="ls -Gh"
+alias ls="ls -Gh --color=always"
 alias sl="ls"
 alias ll="ls -l"
 alias la="ls -a"
