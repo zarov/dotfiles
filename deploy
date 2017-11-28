@@ -25,3 +25,8 @@ echo " Linking neovim"
 ln -s $CWD/vimrc ~/.config/nvim/init.vim
 ln -s $CWD/filetype ~/.config/nvim/ftdetect
 mkdir ~/.local/share/nvim/undo
+
+# i3wm
+echo " Linking i3wm"
+ln -s $CWD/i3 ~/.config/i3
+ln -s $CWD/i3/i3status.conf ~/.i3status.conf
