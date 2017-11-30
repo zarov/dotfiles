@@ -14,6 +14,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tikhomirov/vim-glsl'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -64,7 +65,7 @@ set expandtab
 autocmd BufWritePre * %s/\s\+$//e
 
 " airline
-let g:airline_theme='oceanicnext'
+let g:airline_theme = 'oceanicnext'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -113,3 +114,10 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " multiple-cursors (sublime like)
 let g:multi_cursor_next_key = '<c-d>'
 let g:multi_cursor_prev_key = '<c-s>'
+
+" ack
+nnoremap <Leader>a :Ack!<Space>
+" ag replacing ack
+if executable('ag')
+	let g:ackprg = 'ag --vimgrep'
+endif
