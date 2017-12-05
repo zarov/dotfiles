@@ -4,7 +4,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/NERDTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-sleuth'
@@ -15,6 +14,8 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -97,27 +98,26 @@ nnoremap	<C-l>	:bn<CR>
 set undofile
 set undodir=~/.local/share/nvim/undo/
 
-" delete the current buffer without losing the window
+" delete the current buffer without losing the window with :d
 cabbrev d bp\|bd #
 
 " remove highlighting
 nnoremap	<C-f>	:nohl<CR>
 
-" ctrlp
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_custom_ignore = {
-	\ 'dir': 'node_modules'
-	\ }
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" fzf
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+let g:fzf_layout = { 'down': '~30%' }
+nnoremap	<C-p>	:FZF<CR>
 
 " multiple-cursors (sublime like)
 let g:multi_cursor_next_key = '<c-d>'
 let g:multi_cursor_prev_key = '<c-s>'
 
 " ack
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>a :Ack! <cword><CR>
+nnoremap <Leader>f :Ack!<Space>
+
 " ag replacing ack
 if executable('ag')
-	let g:ackprg = 'ag --vimgrep'
+	let g:ackprg = 'ag --vimgrep --word-regexp --case-sensitive'
 endif
