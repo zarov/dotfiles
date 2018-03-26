@@ -11,7 +11,15 @@
 # PATH
 export PATH=/usr/local/Cellar:$PATH #homebrew
 export PATH=$HOME/bin:$PATH #local scripts
-export PATH=~/.npm-global/bin:$PATH #npm global package
+export PATH=$HOME/.npm-global/bin:$PATH #npm global package
+
+# Ruby PATH
+export GEM_HOME=$HOME/.gem
+export GEM_PATH=$HOME/.gem
+export PATH=$HOME/.gem/bin:$PATH
+
+# Global var
+export EDITOR=/usr/bin/nvim
 
 # Colors
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

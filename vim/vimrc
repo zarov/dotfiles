@@ -32,6 +32,7 @@ let g:gitgutter_sign_modified = '◆'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '~'
+let g:gitgutter_diff_base = 'HEAD'
 
 " ui
 set cursorline
@@ -121,3 +122,9 @@ nnoremap <Leader>f :Ack!<Space>
 if executable('ag')
 	let g:ackprg = 'ag --vimgrep --word-regexp --case-sensitive'
 endif
+
+" goyo
+let g:goyo_width = 81
+
+" one space after comments
+let g:NERDSpaceDelims = 1
