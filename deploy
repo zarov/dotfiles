@@ -1,15 +1,22 @@
 #!/bin/sh
 
 CWD=$(pwd)
+OS=$(uname)
 
-# homebrew
-if test ! $(which brew)
+# Linux or mac
+if [ "${OS}" = "Linux" ]
 then
-    echo " Installing Homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+	echo " Doing nothing"
+else
+	# homebrew
+	if test ! $(which brew)
+	then
+	    echo " Installing Homebrew"
+	    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	fi
 
-brew install git coreutils zsh neovim/neovim/neovim nginx
+	brew install git coreutils zsh neovim/neovim/neovim nginx
+fi
 
 # zsh
 echo " Linking zsh"
@@ -22,11 +29,10 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo " Linking neovim"
-ln -s $CWD/vimrc ~/.config/nvim/init.vim
-ln -s $CWD/filetype ~/.config/nvim/ftdetect
+ln -s $CWD/vim/vimrc ~/.config/nvim/init.vim
 mkdir ~/.local/share/nvim/undo
 
-# i3wm
-echo " Linking i3wm"
-ln -s $CWD/i3 ~/.config/i3
-ln -s $CWD/i3/i3status.conf ~/.i3status.conf
+# tmux
+echo " Linking tmux"
+ln -s $CWD/tmux ~/.tmux
+ln -s $CWD/tmux/tmux.conf ~/.tmux.conf

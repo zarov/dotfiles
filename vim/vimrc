@@ -5,7 +5,7 @@ Plug 'scrooloose/NERDTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'mhartington/oceanic-next'
+Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
 Plug 'pangloss/vim-javascript'
@@ -47,7 +47,7 @@ set guicursor=
 
 " theme
 syntax enable
-colorscheme OceanicNext
+colorscheme nord
 
 " custom syntax
 autocmd! BufNewFile,BufRead *.glsl set filetype=glsl
@@ -67,7 +67,7 @@ set expandtab
 autocmd BufWritePre * %s/\s\+$//e
 
 " airline
-let g:airline_theme = 'oceanicnext'
+let g:airline_theme = 'nord'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -109,10 +109,6 @@ nnoremap	<C-f>	:nohl<CR>
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:fzf_layout = { 'down': '~30%' }
 nnoremap	<C-p>	:FZF<CR>
-
-" multiple-cursors (sublime like)
-let g:multi_cursor_next_key = '<c-d>'
-let g:multi_cursor_prev_key = '<c-s>'
 
 " ack
 nnoremap <Leader>a :Ack! <cword><CR>
