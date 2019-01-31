@@ -20,3 +20,8 @@ mkdir ~/.local/share/nvim/undo
 # tmux
 echo " Linking tmux"
 ln -s $CWD/tmux.conf ~/.tmux.conf
+
+# git
+echo " Linking git"
+ln -s $CWD/git/gitconfig ~/.gitconfig
+ln -s $CWD/git/gitignore_global ~/.gitignore_global
