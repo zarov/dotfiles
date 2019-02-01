@@ -19,4 +19,5 @@ alias ping="ping -c 3"
 alias vim="nvim"
 
 function mcd() { mkdir -p $1 && cd $1 }
-function note() { vim ~/Workspace/notes/$1.md }
+function note() { vim -c "Goyo" ~/Workspace/notes/$*.md }
+function notels() { ls -c ~/Workspace/notes/ | grep "$*" }
