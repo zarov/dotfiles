@@ -7,6 +7,7 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
 alias df="df -h"
+alias du="du -h"
 alias grep="grep --color"
 alias ls="ls -Gh"
 alias sl="ls"
@@ -15,9 +16,7 @@ alias la="ls -a"
 alias lla="ls -la"
 alias paste="pastebin -d -n zarov"
 alias ping="ping -c 3"
-alias scrot="scrot -c -d 5"
-alias tree="tree -C"
 alias vim="nvim"
-alias python="python3"
 
 function mcd() { mkdir -p $1 && cd $1 }
+function note() { vim ~/Workspace/notes/$1.md }
