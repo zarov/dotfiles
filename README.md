@@ -5,6 +5,7 @@ What needs to be installed:
 - neovim
 - tmux
 - git
+- ag
 - fzf
 
 Don't forget to use `chsh` to move from `bash` to `zsh`.
@@ -13,11 +14,12 @@ For neovim, do a `:PlugInstall` the first time.
 
 ### macOS
 
-Install `brew` beforehand: 
+Install `brew` beforehand:
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install git coreutils zsh neovim tmux fzf
 ```
 
-Install a `TRUECOLOUR` terminal (see https://gist.github.com/XVilka/8346728) instead of using the default terminal of macOS.
+Install a `TRUECOLOUR` terminal (see https://gist.github.com/XVilka/8346728)
+instead of using the default terminal of macOS.

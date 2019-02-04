@@ -9,49 +9,49 @@ blue="\033[34m"
 reset="\033[0m"
 
 create_directory() {
-	if [ ! -d "$1" ]; then
-	mkdir -p $1
-	echo " ${yellow}${1}${reset} % has been created"
-	else
-	echo " ${yellow}${1}${reset} % already exists"
-	fi
+    if [ ! -d "$1" ]; then
+        mkdir -p $1
+        echo " ${yellow}${1}${reset} % has been created"
+    else
+        echo " ${yellow}${1}${reset} % already exists"
+    fi
 }
 
 link_file() {
-	if ! which "$1" >/dev/null; then
-	echo " ${yellow}${1}${reset} % ${red}is not available${reset}"
-	elif [ -e "$2" ]; then
-	if [ -L "$2" ]; then
-		echo " ${yellow}${2}${reset} % ${blue}is already symlinked${reset}"
-	else
-		echo " ${yellow}${2}${reset} % ${red}is no symlink${reset}"
-	fi
-	else
-	ln -s "$3" "$2"
-	echo " ${yellow}${2}${reset} % ${green}-> ${3}${reset}"
-	fi
+    if ! which "$1" >/dev/null; then
+        echo " ${yellow}${1}${reset} % ${red}is not available${reset}"
+    elif [ -e "$2" ]; then
+        if [ -L "$2" ]; then
+            echo " ${yellow}${2}${reset} % ${blue}is already symlinked${reset}"
+        else
+            echo " ${yellow}${2}${reset} % ${red}is no symlink${reset}"
+        fi
+    else
+        ln -s "$3" "$2"
+        echo " ${yellow}${2}${reset} % ${green}-> ${3}${reset}"
+    fi
 }
 
 # create all necessary directory
 {
-	create_directory	~/.config/nvim
-	create_directory	~/.local/share/nvim/undo
-	create_directory	~/Workspace/notes
+    create_directory    ~/.config/nvim
+    create_directory    ~/.local/share/nvim/undo
+    create_directory    ~/Workspace/notes
 } | column -t -s %
 
 # link all necessary things
 {
-	link_file 	git	~/.gitconfig		$CWD/git/gitconfig
-	link_file 	git	~/.gitignore_global 	$CWD/git/gitignore_global
-	link_file 	nvim	~/.config/nvim/init.vim	$CWD/vimrc
-	link_file 	tmux	~/.tmux.conf		$CWD/tmux.conf
-	link_file 	zsh	~/.zsh			$CWD/zsh
-	link_file 	zsh	~/.zshrc		$CWD/zsh/zshrc
+    link_file     git        ~/.gitconfig               $CWD/git/gitconfig
+    link_file     git        ~/.gitignore_global        $CWD/git/gitignore_global
+    link_file     nvim       ~/.config/nvim/init.vim    $CWD/vimrc
+    link_file     tmux       ~/.tmux.conf               $CWD/tmux.conf
+    link_file     zsh        ~/.zsh                     $CWD/zsh
+    link_file     zsh        ~/.zshrc                   $CWD/zsh/zshrc
 } | column -t -s %
 
 # specific stuff
 if [ ! -e ~/.local/share/nvim/site/autoload/plug.vim ]; then
-	echo " Adding ${yellow}nvim${reset} plugins"
-	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo " Adding ${yellow}nvim${reset} plugins"
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
