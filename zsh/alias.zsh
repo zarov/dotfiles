@@ -21,3 +21,4 @@ alias vim="nvim"
 function mcd() { mkdir -p $1 && cd $1 }
 function note() { vim -c "Goyo" ~/Workspace/notes/$*.md }
 function notels() { ls -c ~/Workspace/notes/ | grep "$*" }
+function cjd() { cd ~/Documents/*/*/$1* } # https://johnnydecimal.com/concepts/working-at-the-terminal/
