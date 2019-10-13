@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New tab</title>
+    <script>
+        const config = {
+            pages: {
+                Life: [
+                    ['Foo', 'http://foo'],
+                    ['Foo', 'http://foo'],
+                    ['Foo', 'http://foo'],
+                    ['Foo', 'http://foo'],
+                ],
+                Work: [
+                    ['Foo', 'http://foo'],
+                    ['Foo', 'http://foo'],
+                    ['Foo', 'http://foo'],
+                ],
+                KBD: [
+                    ['Foo', 'http://foo'],
+                    ['Foo', 'http://foo'],
+                    ['Foo', 'http://foo'],
+                    ['Foo', 'http://foo'],
+                    ['Foo', 'http://foo'],
+                ]
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="main">
+    </div>
+
+    <div id="todo">
+        <h2>TODO</h2>
+        <ul>
+            <li>generation de la liste d'apres le js</li>
+            <li>selection des categories avec fleches gauche/droite</li>
+            <li>selection du lien avec les fleches haut/bas</li>
+            <li>ajout des icones</li>
+            <li>raccourcis (par exemple `gh` pour github, `hn` pour HN...)</li>
+            <li>météo</li>
+            <li>todo list du jour</li>
+            <li>OU calendrier de la semaine/7 jours à suivre</li>
+            <li>petit calendrier sur 4-5 semaines ou au mois</li>
+        </ul>
+
+        <p>Inspiration:
+            <a target="_blank" href="https://github.com/Boettner-eric/Tiles">Tiles</a>
+        </p>
+    </div>
+
+    <script>
+        // Global variables
+        const main = document.getElementById('main');
+        let selectedCategory;
+
+        // HTML generation
+        let content = '';
+        for (const category in config.pages) {
+            content = `${category}<ul id="${category}">`;
+            config.pages[category].forEach((page) => {
+                content += `<li><a href="${page[1]}">${page[0]}</a></li>`;
+            });
+            content += '</ul>'
+
+            main.innerHTML += content;
+        }
+
+        // Keybindings
+        document.addEventListener('keydown', (e) => {
+            console.log(e);
+            switch(e.keyCode) {
+                case 37: // left
+                    break;
+                case 39: // right
+                    break;
+                case 38: // up
+                    break;
+                case 40: // down
+                    break;
+            }
+        });
+
+        // Initial state
+        selectedCategory = main.children[0];
+    </script>
+</body>
+</html>
