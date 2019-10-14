@@ -11,6 +11,7 @@
 # PATH
 export PATH=/usr/local/Cellar:$PATH #homebrew
 export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # Ruby PATH
 export GEM_HOME=$HOME/.gem

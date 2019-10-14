@@ -1,7 +1,6 @@
 " plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'scrooloose/NERDTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -16,13 +15,9 @@ Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
-
-" nerdtree
-" autocmd vimenter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.rej$']
 
 " gutter
 set number
@@ -51,6 +46,7 @@ colorscheme nord
 
 " custom syntax
 autocmd! BufNewFile,BufRead *.glsl set filetype=glsl
+autocmd! BufNewFile,BufRead *.vrt set filetype=xml
 
 " columns
 set cc=80
@@ -124,3 +120,6 @@ let g:goyo_width = 81
 
 " one space after comments
 let g:NERDSpaceDelims = 1
+
+" deoplete / autocompletion
+let g:deoplete#enable_at_startup = 1
