@@ -1,0 +1,29 @@
+- Install:
+    - à travers un script sh (deploy)
+    - installation de brew pour macOS
+    - installation des programmes divers en fonction de l'OS:
+        - macOS: git coreutils zsh neovim tmux fzf ag
+        - ubuntu: zsh, neovim, tmux, git, ag, fzf
+    - création des répertoires divers
+        - ceux pour la configuration
+        - $HOME/Workspace
+    - lien vers la configuration en fonction de l'OS (macOS ou Linux)
+    - proposer d'installer (yes/no):
+        - node (nvm)
+        - nginx
+    - création d'une clef ssh
+    - installation des fonts, notamment pour powerline
+- neovim:
+    - configuration actuelle
+    - trouver un moyen de faire un :PlugInstall
+    - ameliorer l'autocompletion
+- tmux:
+    - mettre à jour la configuration pour un truc plus stylé (voir simonsmith/dotfiles)
+    - faire un répertoire pour les profils divers
+- git:
+    - configuration actuelle
+- zsh:
+    - prompt: utiliser spaceship
+    - plus d'alias compatible entre chaque OS
+    - revoir l'autocompletion
+
