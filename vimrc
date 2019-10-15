@@ -34,6 +34,11 @@ Plug 'tpope/vim-sleuth'
 Plug 'pangloss/vim-javascript'
 	let g:javascript_plugin_jsdoc = 1
 
+Plug 'dense-analysis/ale'
+	let b:ale_fixers = {'javascript': ['eslint']}
+	let g:ale_lint_on_text_changed = 'never'
+	let g:ale_lint_on_insert_leave = 0
+
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tikhomirov/vim-glsl'
 Plug 'scrooloose/nerdcommenter'
@@ -52,7 +57,9 @@ Plug 'junegunn/fzf.vim'
 	let g:fzf_layout = { 'down': '~30%' }
 	nnoremap	<C-p>	:FZF<CR>
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
+Plug 'carlitux/deoplete-ternjs'
 	let g:deoplete#enable_at_startup = 1
 
 call plug#end()
@@ -64,9 +71,6 @@ set showcmd
 if (has("termguicolors"))
 	set termguicolors
 endif
-
-" no cursor styling
-set guicursor=
 
 " theme
 syntax enable
