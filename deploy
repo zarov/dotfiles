@@ -35,7 +35,8 @@ link_file() {
 # create all necessary directory
 {
     create_directory    ~/.config/nvim
-    create_directory    ~/Workspace/notes
+    create_directory    ~/.nvm
+    create_directory    ~/Workspace
 } | column -t -s %
 
 # link all necessary things
@@ -44,6 +45,5 @@ link_file() {
     link_file     git        ~/.gitignore_global        $CWD/git/gitignore_global
     link_file     nvim       ~/.config/nvim/init.vim    $CWD/vimrc
     link_file     tmux       ~/.tmux.conf               $CWD/tmux.conf
-    link_file     zsh        ~/.zsh                     $CWD/zsh
-    link_file     zsh        ~/.zshrc                   $CWD/zsh/zshrc
+    link_file     zsh        ~/.zshrc                   $CWD/zshrc
 } | column -t -s %

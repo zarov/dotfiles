@@ -1,9 +1,20 @@
 #!/usr/bin/env zsh
 
 # Path
-export PATH=/usr/local/Cellar:$PATH #homebrew
+export PATH=/usr/local/Cellar:$PATH
+export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
+
+# Ruby PATH
+export GEM_HOME=$HOME/.gem
+export GEM_PATH=$HOME/.gem
+export PATH=$HOME/.gem/bin:$PATH
+
+# NVM PATH
+export NVM_DIR=$HOME/.nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
 
 # Editor
 export EDITOR=/usr/local/bin/nvim
@@ -17,7 +28,8 @@ alias ......="cd ../../../../.."
 alias df="df -h"
 alias du="du -h"
 alias grep="grep --color"
-alias ls="ls -Gh"
+alias cat="bat"
+alias ls="exa -Gh"
 alias sl="ls"
 alias ll="ls -l"
 alias la="ls -a"
@@ -158,3 +170,14 @@ elif type compctl &>/dev/null; then
   }
   compctl -K _npm_completion npm
 fi
+
+# TMUX PROFILES
+# workspace for itowns
+# https://github.com/iTowns/itowns
+function tmux-itowns() {
+  tmux new -s itowns -c $HOME/Workspace/itowns -n vim vim \; \
+    neww -n ci \; \
+    splitw -h -p 50 npm run debug \; \
+    splitw -v -p 50 npm run test-unit -- -- --watch \; \
+    selectp -t 0 \;
+  }
