@@ -14,8 +14,8 @@
     - création d'une clef ssh
     - installation des fonts, notamment pour powerline
 - neovim:
-    - configuration actuelle
-    - trouver un moyen de faire un :PlugInstall
+    OK - configuration actuelle
+    OK - trouver un moyen de faire un :PlugInstall
     - ameliorer l'autocompletion
 - tmux:
     - mettre à jour la configuration pour un truc plus stylé (voir simonsmith/dotfiles)
@@ -26,4 +26,6 @@
     - prompt: utiliser spaceship
     - plus d'alias compatible entre chaque OS
     - revoir l'autocompletion
+    - utiliser exa à la place de ls
+    - utiliser bat à la place de cat
 
