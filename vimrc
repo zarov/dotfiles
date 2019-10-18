@@ -29,8 +29,14 @@ Plug 'airblade/vim-gitgutter'
 	let g:gitgutter_sign_modified_removed = '~'
 	let g:gitgutter_diff_base = 'HEAD'
 
+Plug 'Shougo/deoplete.nvim'
+	let g:deoplete#enable_at_startup = 1
+
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-sleuth'
+
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
+Plug 'carlitux/deoplete-ternjs'
 Plug 'pangloss/vim-javascript'
 	let g:javascript_plugin_jsdoc = 1
 
@@ -38,6 +44,12 @@ Plug 'dense-analysis/ale'
 	let b:ale_fixers = {'javascript': ['eslint']}
 	let g:ale_lint_on_text_changed = 'never'
 	let g:ale_lint_on_insert_leave = 0
+
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'sebastianmarkow/deoplete-rust'
+	let g:deoplete#sources#rust#racer_binary='racer'
+	let g:deoplete#sources#rust#rust_source_path='/Users/zarov/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tikhomirov/vim-glsl'
@@ -56,11 +68,6 @@ Plug 'junegunn/fzf.vim'
 	let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 	let g:fzf_layout = { 'down': '~30%' }
 	nnoremap	<C-p>	:FZF<CR>
-
-Plug 'Shougo/deoplete.nvim'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
-Plug 'carlitux/deoplete-ternjs'
-	let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
@@ -116,6 +123,7 @@ nnoremap 	<C-h>	:bp<CR>
 nnoremap	<C-l>	:bn<CR>
 
 " buffer history
+set hidden
 set undofile
 set undodir=~/.config/nvim/undo/
 if !isdirectory(expand(&undodir))
