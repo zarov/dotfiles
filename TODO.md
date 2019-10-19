@@ -38,3 +38,4 @@ A INSTALLER
         - neovim
     - gem install
         - neovim
+    - rust: rustc racer

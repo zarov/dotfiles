@@ -13,6 +13,7 @@ export PATH=$HOME/.gem/bin:$PATH
 
 # Rust PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 # NVM PATH
 export NVM_DIR=$HOME/.nvm

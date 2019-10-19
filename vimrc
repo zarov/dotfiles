@@ -49,7 +49,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'sebastianmarkow/deoplete-rust'
 	let g:deoplete#sources#rust#racer_binary='racer'
-	let g:deoplete#sources#rust#rust_source_path='/Users/zarov/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tikhomirov/vim-glsl'
