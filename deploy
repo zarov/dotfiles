@@ -46,4 +46,5 @@ link_file() {
     link_file     nvim       ~/.config/nvim/init.vim    $CWD/vimrc
     link_file     tmux       ~/.tmux.conf               $CWD/tmux.conf
     link_file     zsh        ~/.zshrc                   $CWD/zshrc
+    link_file     awesome    ~/.config/awesome          $CWD/awesome
 } | column -t -s %

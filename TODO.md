@@ -35,7 +35,25 @@ A INSTALLER
     - spaceship
     - python3 -m pip install --user --upgrade pynvim
     - nvm i -g
-        - neovim
+        - neovim tern
     - gem install
         - neovim
     - rust: rustc racer
+
+AWESOME
+- séparer la configuration en plusieurs fichiers
+    - theme
+    - raccourci
+    - options diverses (fichier principal)
+- raccourcis
+    OK - gestion du volume
+    OK - lock de l'écran
+    - chrome avec proxy IGN
+    - macro IGN pour lancer tous les programmes IGN au bon endroit
+        - 1: Firefox en plein écran
+        - 2: Terminal avec tmux-itowns
+        - 3: Chrome
+    - changement de layout clavier
+- définir les layouts de base avec les applis par défaut
+- ajout d'un wallpaper + flou au screenlock
+    - besoin d'une automatisation
