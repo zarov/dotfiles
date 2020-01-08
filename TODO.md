@@ -43,12 +43,12 @@ A INSTALLER
 AWESOME
 - séparer la configuration en plusieurs fichiers
     - theme
-    - raccourci
+    OK - raccourci
     - options diverses (fichier principal)
 - raccourcis
     OK - gestion du volume
     OK - lock de l'écran
-    - chrome avec proxy IGN
+    OK - chrome avec proxy IGN
     - macro IGN pour lancer tous les programmes IGN au bon endroit
         - 1: Firefox en plein écran
         - 2: Terminal avec tmux-itowns
@@ -57,3 +57,4 @@ AWESOME
 - définir les layouts de base avec les applis par défaut
 - ajout d'un wallpaper + flou au screenlock
     - besoin d'une automatisation
+- installation de drun ou albert pour le spotlight like

@@ -29,16 +29,21 @@ globalkeys = gears.table.join(
       awful.util.spawn("i3lock -n -e -c 555555 -i /home/aberthet/.config/awesome/wallpaper_blur.png", false)
    end, { description = "lock screen", group = "awesome" }),
 
+   -- Chrome IGN
+   awful.key({ modkey, altkey }, "c", function ()
+      awful.util.spawn("google-chrome-stable --proxy-server=http://proxy.ign.fr:3128", false)
+   end, { description = "chrome with proxy", group = "IGN" }),
+
    -- Misc
    awful.key({ modkey }, "s", hotkeys_popup.show_help, {description="show help", group="awesome"}),
    awful.key({ modkey }, "Left", awful.tag.viewprev, {description = "view previous", group = "tag"}),
    awful.key({ modkey }, "Right", awful.tag.viewnext, {description = "view next", group = "tag"}),
    awful.key({ modkey }, "Escape", awful.tag.history.restore, {description = "go back", group = "tag"}),
 
-   awful.key({ modkey }, "j", function ()
+   awful.key({ modkey }, "Tab", function ()
       awful.client.focus.byidx(1)
    end, {description = "focus next by index", group = "client"}),
-   awful.key({ modkey }, "k", function ()
+   awful.key({ modkey, shiftkey }, "Tab", function ()
       awful.client.focus.byidx(-1)
    end, {description = "focus previous by index", group = "client"} ),
    awful.key({ modkey }, "w", function ()
@@ -59,12 +64,6 @@ globalkeys = gears.table.join(
       awful.screen.focus_relative(-1)
    end, {description = "focus the previous screen", group = "screen"}),
    awful.key({ modkey }, "u", awful.client.urgent.jumpto, {description = "jump to urgent client", group = "client"}),
-   awful.key({ modkey }, "Tab", function ()
-      awful.client.focus.history.previous()
-      if client.focus then
-         client.focus:raise()
-      end
-   end, {description = "go back", group = "client"}),
 
    -- Standard program
    awful.key({ modkey }, "Return", function () awful.spawn(terminal) end, {description = "open a terminal", group = "launcher"}),
@@ -89,9 +88,9 @@ globalkeys = gears.table.join(
    awful.key({ modkey, ctrlkey }, "l", function()
       awful.tag.incncol(-1, nil, true)
    end, {description = "decrease the number of columns", group = "layout"}),
-   awful.key({ modkey }, "space", function()
-      awful.layout.inc( 1)
-   end, {description = "select next", group = "layout"}),
+   -- awful.key({ modkey }, "space", function()
+      -- awful.layout.inc( 1)
+   -- end, {description = "select next", group = "layout"}),
    awful.key({ modkey, shiftkey }, "space", function()
       awful.layout.inc(-1)
    end, {description = "select previous", group = "layout"}),
