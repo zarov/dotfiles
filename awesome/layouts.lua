@@ -14,4 +14,6 @@ awful.screen.connect_for_each_screen(function(s)
    awful.tag.add("三", conf)
    awful.tag.add("二", conf)
    awful.tag.add("一", conf)
+
+   awful.screen.focused().tags[1]:view_only()
 end)
