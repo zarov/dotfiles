@@ -1,3 +1,26 @@
+# Installation script
+- automatic things:
+    - check the OS
+    - get the current folder
+- possible actions:
+    - create directories
+    - link all files from this folder
+    - install necessary software, following the OS
+        - macOS: d'abord brew, puis
+            - git coreutils zsh neovim tmux fzf ag exa bat openssl python3 nvm
+              nginx
+            - mise à jour de xcode
+        - Linux: récupérer l'installer, puis:
+            - git zsh neovim tmux fzf ag exa bat openssl python3 nvm drive
+    - set the correct PATH, regarding the OS
+    - Linux only:
+        - setup drive cron
+        - setup awesome wm (install + config)
+
+
+
+# Archives:
+
 - Install:
     - à travers un script sh (deploy)
     - installation de brew pour macOS

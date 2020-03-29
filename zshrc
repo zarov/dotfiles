@@ -1,26 +1,27 @@
 #!/usr/bin/env zsh
 
 # Path
-export PATH=/usr/local/Cellar:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/bin:$PATH
+# export PATH=/usr/local/Cellar:$PATH
+# export PATH=/usr/local/sbin:$PATH
+# export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
-# Ruby PATH
-export GEM_HOME=$HOME/.gem
-export GEM_PATH=$HOME/.gem
-export PATH=$HOME/.gem/bin:$PATH
-
 # Rust PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+# export PATH=$HOME/.cargo/bin:$PATH
+# export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
-# NVM PATH
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# # NVM PATH
+# export NVM_DIR=$HOME/.nvm
+# # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
-export PATH=$HOME/.npm-global/bin:$PATH
+# [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
+# export PATH=$HOME/.npm-global/bin:$PATH
+
+# # Ruby PATH
+# # export GEM_HOME=$HOME/.gem
+# export GEM_PATH=$HOME/.gem
+# export PATH=$HOME/.gem/bin:$PATH
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Editor
 export EDITOR=/usr/local/bin/nvim
@@ -40,7 +41,6 @@ alias sl="ls"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
-alias paste="pastebin -d -n zarov"
 alias ping="ping -c 3"
 alias vim="nvim"
 alias tmux="tmux -2"
@@ -65,7 +65,7 @@ select-word-style bash
 setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
-HISTFILE=~/.zsh/history
+HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 export HISTFILE HISTSIZE SAVEHIST

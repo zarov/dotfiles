@@ -1,0 +1,34 @@
+#!/bin/zsh
+
+echo "Creating missing directories"
+mkdir -p ~/.config/nvim
+mkdir -p ~/.nvm
+
+echo "Linking dotfiles"
+cwd=$(pwd)
+ln -s $cwd/git/gitconfig          ~/.gitconfig
+ln -s $cwd/git/gitignore_global   ~/.gitignore_global
+ln -s $cwd/tmux.conf              ~/.tmux.conf
+ln -s $cwd/init.vim               ~/.config/nvim/init.vim
+ln -s $cwd/zshrc                  ~/.zshrc
+
+echo "Installing XCode Command Line Tools"
+xcode-select --install
+
+echo "Installing brew"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+echo "Installing things via brew"
+brew install coreutils openssl git neovim nvm rustup fzf ag tmux exa bat starship python nginx
+
+echo "Installing RVM"
+curl -sSL https://get.rvm.io | bash -s stable
+
+echo "Configuring neovim"
+pip3 install --user --upgrade pynvim
+nvm i -g neovim tern
+gem install neovim
+
+echo "Installing softwares"
+brew install firefox google-chrome vlc notion iterm2 steam autodesk-fusion360 gdrive
+
