@@ -1,27 +1,9 @@
 #!/usr/bin/env zsh
 
-# Path
-# export PATH=/usr/local/Cellar:$PATH
-# export PATH=/usr/local/sbin:$PATH
-# export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/bin:$PATH
-
-# Rust PATH
-# export PATH=$HOME/.cargo/bin:$PATH
-# export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-
-# # NVM PATH
-# export NVM_DIR=$HOME/.nvm
-# # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-# [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
-# export PATH=$HOME/.npm-global/bin:$PATH
-
-# # Ruby PATH
-# # export GEM_HOME=$HOME/.gem
-# export GEM_PATH=$HOME/.gem
-# export PATH=$HOME/.gem/bin:$PATH
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# NVM PATH
+export NVM_DIR=$HOME/.nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
 
 # Editor
 export EDITOR=/usr/local/bin/nvim
@@ -178,12 +160,36 @@ elif type compctl &>/dev/null; then
 fi
 
 # TMUX PROFILES
-# workspace for itowns
-# https://github.com/iTowns/itowns
-function tmux-itowns() {
-  tmux new -s itowns -c $HOME/Workspace/itowns -n nvim nvim \; \
-    neww -n ci \; \
-    splitw -h -p 50 npm run debug \; \
-    splitw -v -p 50 npm run test-unit -- -- --watch \; \
-    selectp -t 0 \;
-  }
+function tm() {
+  if tmux has -t "$1" &> /dev/null
+  then
+    tmux attach -t "$1"
+    exit 0
+  fi
+
+  case "$1" in
+    "itowns")
+      tmux new -s itowns -c $HOME/Workspace/itowns -n nvim nvim \; \
+        neww -n ci \; \
+        splitw -h -p 50 npm run debug \; \
+        splitw -v -p 50 npm run test-unit -- -- --watch \; \
+        selectp -t 0 \;
+      ;;
+    "entwine")
+      tmux new -s entwine -c $HOME/Workspace/data-itowns/itowns-entwine -n ci npm run start \; \
+        splitw -h -p 50 \; \
+        neww -n nvim nvim \;
+      ;;
+    "jekyll")
+      tmux new -s jekyll -c $HOME/Workspace/zarov.github.io/ -n jekyll bundle exec jekyll serve \; \
+        splitw -h -p 50 \; \
+        neww -n nvim nvim \;
+      ;;
+    *)
+      tmux
+      ;;
+  esac
+}
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

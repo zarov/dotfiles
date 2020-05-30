@@ -9,7 +9,7 @@ cwd=$(pwd)
 ln -s $cwd/git/gitconfig          ~/.gitconfig
 ln -s $cwd/git/gitignore_global   ~/.gitignore_global
 ln -s $cwd/tmux.conf              ~/.tmux.conf
-ln -s $cwd/init.vim               ~/.config/nvim/init.vim
+ln -s $cwd/vimrc                  ~/.config/nvim/init.vim
 ln -s $cwd/zshrc                  ~/.zshrc
 
 echo "Installing XCode Command Line Tools"
@@ -19,16 +19,23 @@ echo "Installing brew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "Installing things via brew"
-brew install coreutils openssl git neovim nvm rustup fzf ag tmux exa bat starship python nginx
+brew install coreutils openssl git neovim nvm rustup fzf ag tmux exa bat starship python nginx diff-so-fancy
 
 echo "Installing RVM"
 curl -sSL https://get.rvm.io | bash -s stable
 
+echo "Installing latest nodejs"
+nvm i latest
+
 echo "Configuring neovim"
 pip3 install --user --upgrade pynvim
-nvm i -g neovim tern
+npm i -g neovim tern
 gem install neovim
 
 echo "Installing softwares"
-brew install firefox google-chrome vlc notion iterm2 steam autodesk-fusion360 gdrive
+brew cask
+brew cask install smcfancontrol firefox google-chrome vlc iterm2 steam autodesk-fusion360 google-backup-and-sync
 
+echo "Installing fonts"
+brew tap homebrew/cask-fonts
+brew cask install font-meslo-for-powerline

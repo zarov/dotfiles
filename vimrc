@@ -21,7 +21,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'
 	set number
-	set relativenumber
+	" set relativenumber
 	let g:gitgutter_sign_added = '+'
 	let g:gitgutter_sign_modified = '◆'
 	let g:gitgutter_sign_removed = '-'
