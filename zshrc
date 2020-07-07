@@ -2,8 +2,15 @@
 
 # NVM PATH
 export NVM_DIR=$HOME/.nvm
+# MacOS
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
+# Linux
+[ -s "$HOME/.nvm/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh"
+[ -s "$HOME/.nvm/bash_completion" ] && . "$HOME/.nvm/bash_completion"
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
 
 # Editor
 export EDITOR=/usr/local/bin/nvim
